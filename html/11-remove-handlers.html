@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Removing handlers</title>
+  </head>
+  <body>
+    <h1>Removing handlers</h1>
+    <p>
+      Trigger events: <button>Click Me</button>
+    </p>
+
+    <script>
+      function myClick() {
+          console.log('Button got clicked');
+      };
+      
+      window.addEventListener("load", function() {
+          const btn = document.querySelector("p button");
+          btn.addEventListener('click', () => console.log("Unremovable handler"));
+          btn.addEventListener('click', myClick);
+          
+          // now we're trying to remove both...
+          btn.removeEventListener('click', () => console.log("Unremovable handler"));
+          btn.removeEventListener('click', myClick);
+      });
+    </script>
+  </body>
+</html>

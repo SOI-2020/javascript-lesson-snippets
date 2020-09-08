@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Attributes vs Properties</title>
+  </head>
+  <body>
+    <h1>Attributes vs Properties</h1>
+    <p id="my-id" style="color:red;font-size:200%">
+      First paragraph
+    </p>
+
+    <label for="my-input">A checked box</label>
+    <input id="my-input" type="checkbox" checked>
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.getElementById("my-id");
+          const inp = document.querySelector("input");
+
+          // .style is an object
+          console.log('p.style', p.style);
+          // attribute style is the original string
+          console.log('p.getAttribute(style) = ' +
+                      p.getAttribute('style'));
+          // .checked is a boolean
+          console.log("inp.checked = " + inp.checked);
+          // attribute checked is empty string
+          console.log('inp.getAttribute(checked) = ' +
+                      inp.getAttribute("checked"));
+          
+      });
+    </script>
+  </body>
+</html>

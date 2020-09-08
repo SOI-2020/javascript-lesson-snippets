@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Querying DOM</title>
+  </head>
+  <body>
+    <h1>Querying DOM</h1>
+    <p id="my-id">First paragraph</p>
+    <p class="my-class">Second paragraph</p>
+    <p>Last paragraph</p>
+
+    <script>
+      const p = document.getElementById("my-id");
+      console.log("p#my-id = " + p.textContent);
+      let ps = document.getElementsByClassName("my-class");
+      console.log("p.my-class = " + ps[0].textContent);
+      ps = document.querySelectorAll("p:last-of-type");
+      console.log("p:last-child = " + ps[0].textContent);
+      
+      const h1s = document.getElementsByTagName("h1");
+      console.log("h1 = " + h1s[0].textContent);
+    </script>
+  </body>
+</html>

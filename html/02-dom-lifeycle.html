@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM Lifecycle</title>
+    <script>
+      // DOM is loading, not all pieces are there yet
+      console.debug(`! Current state is: ${document.readyState}`);
+
+      // fired whenever state change
+      document.onreadystatechange = function() {
+          console.debug(`* Current state is: ${document.readyState}`);
+      };
+
+      // fired when DOM is interactive
+      document.addEventListener('DOMContentLoaded', function() {
+          console.debug(`> Current state is: ${document.readyState}`);
+      });
+
+      // fired when DOM is complete
+      window.addEventListener('load', function() {
+          console.debug(`+ Current state is: ${document.readyState}`);
+      });      
+    </script>
+  </head>
+  <body>
+    <h1>DOM Lifecycle</h1>
+    <p>Please open the development console</p>
+  </body>
+</html>

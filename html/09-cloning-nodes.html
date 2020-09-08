@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cloning nodes</title>
+  </head>
+  <body>
+    <h1>Cloning nodes</h1>
+
+    <p>A list of items</p>
+    <ol>
+    </ol>
+      
+    <script>
+      window.addEventListener("load", function() {
+          const ol = document.querySelector('ol');
+          const tmpl = document.createElement('li');
+          tmpl.innerHTML = 'Item: <b></b>';
+
+          // now we have a "template" node to be used as
+          // a base for our items
+          for (let i = 1; i <= 10; i++) {
+              const node = tmpl.cloneNode(true);
+              const b = node.querySelector('b');
+              b.textContent = '#' + i;
+              ol.appendChild(node);
+          }
+      });
+    </script>
+  </body>
+</html>
+

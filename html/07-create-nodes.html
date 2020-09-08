@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Creating nodes</title>
+  </head>
+  <body>
+    <h1>Creating nodes</h1>
+
+    <p>
+      Here's a link:
+    </p>
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.querySelector("p");
+          const span = document.createElement('span');
+          const a = document.createElement('a');
+          a.title = 'This is a tooltip';
+          a.href = '#example';
+          const link = document.createTextNode('An example');
+
+          // appending nodes to their parent
+          // order is not really relevant
+          a.appendChild(link);
+          span.appendChild(a);
+          p.appendChild(span);
+      });
+    </script>
+  </body>
+</html>

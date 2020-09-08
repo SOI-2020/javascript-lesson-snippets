@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Handling events</title>
+  </head>
+  <body>
+    <h1>Handling events</h1>
+    <p>
+      Trigger events: <button onclick="myClick('hi!')">Click Me</button>
+    </p>
+
+    <label for="my-input">Try losing focus</label>
+    <input id="my-input" type="text" value="No value">
+
+    <script>
+      function myClick(param) {
+          console.log('Something got clicked:', param);
+      };
+      
+      window.addEventListener("load", function() {
+          const inp = document.querySelector("input");
+
+          // when `blur` event is handled, the input parameter
+          // represents the event itself
+          inp.onblur = function($event) {
+              console.log('Focus lost, value is ', inp.value, $event);
+          };
+      });
+    </script>
+  </body>
+</html>

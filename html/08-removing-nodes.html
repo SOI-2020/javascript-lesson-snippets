@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Removing nodes</title>
+  </head>
+  <body>
+    <h1>Removing nodes</h1>
+
+    <p>
+      Here's a link:
+      <span>
+        <a href="#link">Link</a>
+        to nowhere
+      </span>
+    </p>
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.querySelector('p');
+          const span = p.querySelector('span');
+          const a = span.querySelector('a');
+
+          // using removeChild
+          span.removeChild(a);
+          
+          // but we can also remove span streight away
+          span.remove();
+
+          // and also remove the text that remains
+          p.innerHTML = "<em>That's another content</em>";
+      });
+    </script>
+  </body>
+</html>

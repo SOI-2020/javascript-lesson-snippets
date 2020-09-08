@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loading scripts</title>
+    <script>
+      console.debug("Document body does not exist yet!", document.body);
+      console.debug("But head exists!", document.head);
+      
+      function iLike(what) {
+          console.log(`I like ${what}`);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Loading scripts</h1>
+    <p>Please open the development console</p>
+    
+    <script type="text/javascript">
+      console.debug("Document body exists", document.body);
+    </script>
+    <script>
+      iLike('stout beers');
+    </script>
+  </body>
+</html>

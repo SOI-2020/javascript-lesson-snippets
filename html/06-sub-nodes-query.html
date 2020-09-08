@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sub-nodes querying</title>
+  </head>
+  <body>
+    <h1>Sub-nodes querying</h1>
+
+    <p>
+      First paragraph:
+      <span>
+        <a href="exercise.html">Exercise</a>
+      </span>
+    </p>
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.querySelector("p");
+          const a = p.querySelector("a");
+          // this sets the link tooltip
+          a.title = 'Next Exercise!';
+          a.href = '#';
+      });
+    </script>
+  </body>
+</html>

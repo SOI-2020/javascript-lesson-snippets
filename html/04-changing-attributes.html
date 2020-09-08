@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Changing Attributes</title>
+  </head>
+  <body>
+    <h1>Changing Attributes</h1>
+    <p id="my-id">First paragraph</p>
+    <label for="my-input">A input field</label>
+    <input id="my-input" type="text">
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.getElementById("my-id");
+          p.style.color = 'red';
+          p.style.textAlign = 'center';
+          p.style.fontWeight = 'bolder';
+          p.style.marginTop = '5rem';
+
+          p.setAttribute('id', 'a-new-id');
+          console.log('1. ', p.id === 'a-new-id');
+
+          const inp = document.querySelector('input');
+
+          // setting the attribute changes the property
+          inp.setAttribute('value', 'field value 123');
+          console.log('2. ', inp.value === 'field value 123');
+
+          // settings the property doesn't change the attribute
+          inp.value = 'unknown value';
+          console.log('3. ', inp.getAttribute('value') === 'unknown value');
+      });
+    </script>
+  </body>
+</html>

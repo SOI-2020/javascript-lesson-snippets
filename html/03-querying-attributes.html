@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reading Attributes</title>
+  </head>
+  <body>
+    <h1>Reading Attributes</h1>
+    <p id="my-id" my-attribute="my-value">
+      First paragraph
+    </p>
+
+    <script>
+      window.addEventListener("load", function() {
+          const p = document.getElementById("my-id");
+          console.log("p.id = " + p.id);
+          console.log("p.my-attribute = " + 
+                      p.getAttribute("my-attribute"));
+      });
+    </script>
+  </body>
+</html>
